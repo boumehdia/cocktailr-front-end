@@ -5,18 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CocktailComponent } from './components/cocktail/cocktail.component';
 import { IngredientComponent } from './components/ingredient/ingredient.component';
-import { HttpClientModule  } from '@angular/common/http'
+import { HttpClientModule  } from '@angular/common/http';
+import { FormCocktailComponent } from './components/form-cocktail/form-cocktail.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     CocktailComponent,
-    IngredientComponent
+    IngredientComponent,
+    FormCocktailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule 
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

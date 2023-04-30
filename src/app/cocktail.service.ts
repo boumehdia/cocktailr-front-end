@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CocktailService {
-  readonly API_URL = "http://localhost:8080"
-  readonly ENDPOINT_COCKTAIL = "/cocktail"
+  private readonly API_URL = "http://localhost:8080"
+  private readonly ENDPOINT_COCKTAIL = "/cocktail"
   constructor(private http: HttpClient) {
 
 
@@ -19,4 +19,7 @@ export class CocktailService {
     return this.http.get<Cocktail[]>(this.API_URL + this.ENDPOINT_COCKTAIL);
   }
 
+  // createCocktail(cocktail: Cocktail): Observable<Cocktail> {
+  //   return this.http.post<Cocktail>(this.API_URL + this.ENDPOINT_COCKTAIL, cocktail);
+  // }
 }

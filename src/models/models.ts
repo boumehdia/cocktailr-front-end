@@ -14,3 +14,11 @@ export interface Ingredient {
     ingredients: Ingredient[];
 }
   
+// export interface Cocktail {
+//   name: string;
+//   instructions: string;
+//   category: string;
+//   glass: string;
+//   imageURL: string;
+//   alcoholic: boolean;
+// }

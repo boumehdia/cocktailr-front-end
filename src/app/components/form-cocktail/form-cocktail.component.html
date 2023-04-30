@@ -1,0 +1,42 @@
+<p>form-cocktail works!</p>
+<form [formGroup]="cocktailForm" (ngSubmit)="onSubmit()">
+  <input type="text" name="name" placeholder="name" formControlName="name" />
+  <br />
+  <input
+    type="text"
+    name="instructions"
+    placeholder="instructions"
+    formControlName="instructions"
+    required
+  />
+  <br />
+  <input
+    type="text"
+    name="category"
+    placeholder="category"
+    formControlName="category"
+    required
+  />
+  <br />
+  <input
+    type="text"
+    name="glass"
+    placeholder="glass"
+    formControlName="glass"
+    required
+  />
+  <br />
+  <input
+    type="text"
+    name="imageURL"
+    placeholder="imageURL"
+    formControlName="imageURL"
+    required
+  />
+  <br />
+  <!-- <input type="text" name="alcoholic" placeholder="alcoholic" ngModel /> <br /> -->
+  <label for="name">Alcoholic</label
+  ><input type="checkbox" name="alcoholic" formControlName="alcoholic" />
+  <button [disabled]="!cocktailForm.valid" type="submit">Submit</button>
+  <!--  -->
+</form>
