@@ -1,7 +1,22 @@
 <h1>Cocktailr</h1>
+<div class="search">
+  <label for="search">Search: </label
+  ><input
+    type="text"
+    name="search"
+    [(ngModel)]="searchValue"
+    (keyup.enter)="filterCocktails()"
+  />
+  <button *ngIf="isSearched" (click)="reset()">Reset</button>
+</div>
+
+<!-- <div *ngIf="isSearched && searchValue !== ''">
+  Result of your search "{{ searchValue }}"
+</div> -->
+
 <div class="cocktails">
   <tile-cocktail
-    *ngFor="let cocktail of cocktails"
+    *ngFor="let cocktail of filteredCocktails"
     [cocktail]="cocktail"
   ></tile-cocktail>
 </div>

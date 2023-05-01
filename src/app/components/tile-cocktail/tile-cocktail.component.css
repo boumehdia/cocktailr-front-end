@@ -2,3 +2,15 @@
 .one-cocktail img {
     width: 150px;
 }
+.delete-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.delete-button svg {
+    cursor: pointer;
+}
+
+.delete-button svg:hover {
+    fill: #E91E63;
+}
