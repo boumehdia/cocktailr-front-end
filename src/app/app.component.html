@@ -1,19 +1,10 @@
-<h1>Les cocktails:</h1>
-<ul *ngFor="let cocktail of cocktails">
-  <li>{{ cocktail.id }}</li>
-  <li>{{ cocktail.name }}</li>
-  <li>{{ cocktail.instructions }}</li>
-  <li>{{ cocktail.category }}</li>
-  <li>{{ cocktail.glass }}</li>
-  <li>{{ cocktail.alcoholic }}</li>
-  <li>{{ cocktail.imageURL }}</li>
-  <li>
-    <ul *ngFor="let ingredient of cocktail.ingredients">
-      <li>{{ ingredient.id }}</li>
-      <li>{{ ingredient.name }}</li>
-    </ul>
-  </li>
-</ul>
+<h1>Cocktailr</h1>
+<div class="cocktails">
+  <tile-cocktail
+    *ngFor="let cocktail of cocktails"
+    [cocktail]="cocktail"
+  ></tile-cocktail>
+</div>
 
 <form-cocktail> </form-cocktail>
 <router-outlet></router-outlet>

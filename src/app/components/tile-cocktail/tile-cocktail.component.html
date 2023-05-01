@@ -1,0 +1,17 @@
+<div class="one-cocktail">
+  <h3>
+    <span class="num"> {{ cocktail.id }}</span> {{ cocktail.name }}
+  </h3>
+  <p><span class="label">Instructions:</span> {{ cocktail.instructions }}</p>
+  <p><span class="label">Category:</span> {{ cocktail.category }}</p>
+  <p><span class="label">Type of glass:</span> {{ cocktail.glass }}</p>
+  <p><span class="label">Alcoholic:</span> {{ cocktail.alcoholic }}</p>
+  <img [src]="sanitizer.bypassSecurityTrustUrl(cocktail.imageURL)" />
+
+  <h4>Ingredients:</h4>
+  <ul class="ingredients">
+    <li *ngFor="let ingredient of cocktail.ingredients">
+      {{ ingredient.id }} - {{ ingredient.name }}
+    </li>
+  </ul>
+</div>

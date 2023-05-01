@@ -1,96 +1,41 @@
-<h2>Formulaire d'ajout</h2>
-<!-- <form [formGroup]="cocktailForm" (ngSubmit)="onSubmit()">
-  <input type="text" name="name" placeholder="name" formControlName="name" />
-  <br />
-  <input
-    type="text"
-    name="instructions"
-    placeholder="instructions"
-    formControlName="instructions"
-    required
-  />
-  <br />
-  <input
-    type="text"
-    name="category"
-    placeholder="category"
-    formControlName="category"
-    required
-  />
-  <br />
-  <input
-    type="text"
-    name="glass"
-    placeholder="glass"
-    formControlName="glass"
-    required
-  />
-  <br />
-  <input
-    type="text"
-    name="imageURL"
-    placeholder="imageURL"
-    formControlName="imageURL"
-    required
-  />
-  <br />
-
-  <label for="name">Alcoholic</label
-  ><input type="checkbox" name="alcoholic" formControlName="alcoholic" />
-
-  <div formArrayName="ingredients">
-    <div
-      *ngFor="
-        let ingredient of cocktailForm.get('ingredients')?.value;
-        let i = index
-      "
-    >
-      <input [formControlName]="i" type="text" placeholder="Ingredient name" />
-      <button type="button" (click)="removeIngredient(i)">Remove</button>
-    </div>
-  </div>
-
-  <button type="button" (click)="addIngredient()">Add Ingredient</button>
-
-  <button [disabled]="!cocktailForm.valid" type="submit">Submit</button>
-</form> -->
-
-<form [formGroup]="cocktailForm" (ngSubmit)="onSubmit()">
-  <div>
+<h2>Add a cocktail</h2>
+<form class="add-cocktail" [formGroup]="cocktailForm" (ngSubmit)="onSubmit()">
+  <input type="hidden" formControlName="id" />
+  <div class="one-input">
     <label>Name:</label>
     <input type="text" formControlName="name" />
   </div>
-  <div>
+  <div class="one-input">
     <label>Instructions:</label>
     <textarea formControlName="instructions"></textarea>
   </div>
-  <div>
+  <div class="one-input">
     <label>Category:</label>
     <input type="text" formControlName="category" />
   </div>
-  <div>
+  <div class="one-input">
     <label>Glass:</label>
     <input type="text" formControlName="glass" />
   </div>
-  <div>
+  <div class="one-input">
     <label>Alcoholic:</label>
     <input type="checkbox" formControlName="alcoholic" />
   </div>
-  <div>
+  <div class="one-input">
     <label>Image URL:</label>
     <input type="text" formControlName="imageURL" />
   </div>
-  <div formArrayName="ingredients">
+  <div class="ingredients" formArrayName="ingredients">
     <div
       *ngFor="
         let ingredient of cocktailForm.get('ingredients')?.value;
         let i = index
       "
     >
-      <div [formGroupName]="i">
+      <div class="ingredient" [formGroupName]="i">
         <!-- <label>Ingredient ID:</label> -->
         <input type="hidden" formControlName="id" />
-        <div>
+        <div class="one-input">
           <label>Ingredient Name:</label>
           <input type="text" formControlName="name" />
         </div>

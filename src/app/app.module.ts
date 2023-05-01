@@ -8,13 +8,15 @@ import { IngredientComponent } from './components/ingredient/ingredient.componen
 import { HttpClientModule  } from '@angular/common/http';
 import { FormCocktailComponent } from './components/form-cocktail/form-cocktail.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TileCocktailComponent } from './components/tile-cocktail/tile-cocktail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CocktailComponent,
     IngredientComponent,
-    FormCocktailComponent
+    FormCocktailComponent,
+    TileCocktailComponent
   ],
   imports: [
     BrowserModule,
