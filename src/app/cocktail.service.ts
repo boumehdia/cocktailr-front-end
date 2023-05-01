@@ -22,11 +22,15 @@ export class CocktailService {
   postCocktail(cocktail: Cocktail): Observable<Cocktail> {
     return this.http.post<Cocktail>(this.API_URL + this.ENDPOINT_COCKTAIL, cocktail);
   }
+  deleteCocktail(cocktailId: number): Observable<any> {
+    const url = `${this.API_URL}${this.ENDPOINT_COCKTAIL}/${cocktailId}`;
+    return this.http.delete(url);
+  }
 
   postIngredient(ingredient: Ingredient): Observable<Ingredient> {
     return this.http.post<Ingredient>(this.API_URL + this.ENDPOINT_INGREDIENT, ingredient);
   }
-  
+
   putCocktailIngredient(cocktailId: number, ingredientId: number): Observable<any> {
     return this.http.put<any>(this.API_URL + this.ENDPOINT_COCKTAIL+ '/' + cocktailId + this.ENDPOINT_INGREDIENT + '/' + ingredientId, {});
   }
