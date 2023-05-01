@@ -18,4 +18,7 @@ export class TileCocktailComponent {
       });
     }
   }
+  openEditPopup(cocktail: Cocktail): void {
+    alert(cocktail.id);
+  }
 }
