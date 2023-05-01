@@ -1,5 +1,5 @@
-<p>form-cocktail works!</p>
-<form [formGroup]="cocktailForm" (ngSubmit)="onSubmit()">
+<h2>Formulaire d'ajout</h2>
+<!-- <form [formGroup]="cocktailForm" (ngSubmit)="onSubmit()">
   <input type="text" name="name" placeholder="name" formControlName="name" />
   <br />
   <input
@@ -34,9 +34,74 @@
     required
   />
   <br />
-  <!-- <input type="text" name="alcoholic" placeholder="alcoholic" ngModel /> <br /> -->
+
   <label for="name">Alcoholic</label
   ><input type="checkbox" name="alcoholic" formControlName="alcoholic" />
+
+  <div formArrayName="ingredients">
+    <div
+      *ngFor="
+        let ingredient of cocktailForm.get('ingredients')?.value;
+        let i = index
+      "
+    >
+      <input [formControlName]="i" type="text" placeholder="Ingredient name" />
+      <button type="button" (click)="removeIngredient(i)">Remove</button>
+    </div>
+  </div>
+
+  <button type="button" (click)="addIngredient()">Add Ingredient</button>
+
   <button [disabled]="!cocktailForm.valid" type="submit">Submit</button>
-  <!--  -->
+</form> -->
+
+<form [formGroup]="cocktailForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Name:</label>
+    <input type="text" formControlName="name" />
+  </div>
+  <div>
+    <label>Instructions:</label>
+    <textarea formControlName="instructions"></textarea>
+  </div>
+  <div>
+    <label>Category:</label>
+    <input type="text" formControlName="category" />
+  </div>
+  <div>
+    <label>Glass:</label>
+    <input type="text" formControlName="glass" />
+  </div>
+  <div>
+    <label>Alcoholic:</label>
+    <input type="checkbox" formControlName="alcoholic" />
+  </div>
+  <div>
+    <label>Image URL:</label>
+    <input type="text" formControlName="imageURL" />
+  </div>
+  <div formArrayName="ingredients">
+    <div
+      *ngFor="
+        let ingredient of cocktailForm.get('ingredients')?.value;
+        let i = index
+      "
+    >
+      <div [formGroupName]="i">
+        <!-- <label>Ingredient ID:</label> -->
+        <input type="hidden" formControlName="id" />
+        <div>
+          <label>Ingredient Name:</label>
+          <input type="text" formControlName="name" />
+        </div>
+        <button type="button" (click)="removeIngredientFormGroup(i)">
+          Remove
+        </button>
+      </div>
+    </div>
+    <button type="button" (click)="addIngredientFormGroup()">
+      Add Ingredient
+    </button>
+  </div>
+  <button type="submit">Submit</button>
 </form>
