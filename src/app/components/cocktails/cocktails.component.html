@@ -1,9 +1,4 @@
-<h1>Cocktailr</h1>
-
-<a routerLink="/cocktail-form">Add a Cocktail</a>
-<a routerLink="/">Cocktails</a>
-
-<!-- <div class="search">
+<div class="search">
   <label for="search">Search: </label
   ><input
     type="text"
@@ -14,16 +9,9 @@
   <button *ngIf="isSearched" (click)="reset()">Reset</button>
 </div>
 
-<div *ngIf="isSearched && searchValue !== ''">
-  Result of your search "{{ searchValue }}"
-</div> 
-
 <div class="cocktails">
   <tile-cocktail
     *ngFor="let cocktail of filteredCocktails"
     [cocktail]="cocktail"
   ></tile-cocktail>
-</div> -->
-
-<!-- <add-cocktail> </add-cocktail> -->
-<router-outlet></router-outlet>
+</div>

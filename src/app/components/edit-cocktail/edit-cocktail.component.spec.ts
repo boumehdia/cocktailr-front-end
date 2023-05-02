@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormCocktailComponent } from './form-cocktail.component';
+import { EditCocktailComponent } from './edit-cocktail.component';
 
-describe('FormCocktailComponent', () => {
-  let component: FormCocktailComponent;
-  let fixture: ComponentFixture<FormCocktailComponent>;
+describe('EditCocktailComponent', () => {
+  let component: EditCocktailComponent;
+  let fixture: ComponentFixture<EditCocktailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormCocktailComponent ]
+      declarations: [ EditCocktailComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FormCocktailComponent);
+    fixture = TestBed.createComponent(EditCocktailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

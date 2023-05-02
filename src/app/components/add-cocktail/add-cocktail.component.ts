@@ -5,11 +5,11 @@ import { Ingredient, Cocktail } from 'src/models/models';
 
 
 @Component({
-  selector: 'form-cocktail',
-  templateUrl: './form-cocktail.component.html',
-  styleUrls: ['./form-cocktail.component.css']
+  selector: 'add-cocktail',
+  templateUrl: './add-cocktail.component.html',
+  styleUrls: ['./add-cocktail.component.css']
 })
-export class FormCocktailComponent implements OnInit {
+export class AddCocktailComponent implements OnInit {
   cocktailForm: FormGroup;
 
   constructor(private fb: FormBuilder, private cocktailService: CocktailService) {

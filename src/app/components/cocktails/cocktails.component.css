@@ -1,0 +1,15 @@
+
+.cocktails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+tile-cocktail {
+    width: 30%;
+    background-color: mistyrose;
+    height: auto;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 30px;
+}

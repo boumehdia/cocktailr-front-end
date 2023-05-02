@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { CocktailComponent } from './components/cocktail/cocktail.component';
 import { IngredientComponent } from './components/ingredient/ingredient.component';
 import { HttpClientModule  } from '@angular/common/http';
-import { FormCocktailComponent } from './components/form-cocktail/form-cocktail.component'
+import { AddCocktailComponent } from './components/add-cocktail/add-cocktail.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TileCocktailComponent } from './components/tile-cocktail/tile-cocktail.component';
+import { EditCocktailComponent } from './components/edit-cocktail/edit-cocktail.component';
+import { CocktailsComponent } from './components/cocktails/cocktails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CocktailComponent,
     IngredientComponent,
-    FormCocktailComponent,
-    TileCocktailComponent
+    AddCocktailComponent,
+    TileCocktailComponent,
+    EditCocktailComponent,
+    CocktailsComponent
   ],
   imports: [
     BrowserModule,
