@@ -2,16 +2,72 @@
 .one-cocktail img {
     width: 150px;
 }
-/* (click)="openEditPopup(cocktail)" */
-.edit-delete-button {
+
+.one-cocktail h3 span.num {
+    font-size: 14px;
+}
+.one-cocktail h3 span {
+    padding: 0 15px;
+    background-color:#fff;
+}
+
+.one-cocktail p span {
+    text-decoration: underline;
+}
+
+.one-cocktail h3 {
+    text-align: center;
+}
+.one-cocktail .one-cocktail-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.one-cocktail .one-cocktail-content .left {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.one-cocktail .edit-delete-button {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
-.edit-delete-button svg {
+.one-cocktail .edit-delete-button svg {
     cursor: pointer;
 }
 
-.edit-delete-button svg:hover {
+.one-cocktail .edit-delete-button svg:hover {
     fill: #E91E63;
+}
+
+
+.one-cocktail h3{
+    position:relative;
+    z-index: 3;
+}
+.one-cocktail h3::before {
+    content: url("../../../assets/img/fleur.svg");
+    position:absolute;
+    display: block;
+    left:50%;
+    top:-30px;
+    text-align: center;
+}
+.one-cocktail h3:after {
+    content: '';
+    width: 100%;
+    border-bottom: solid 1px #ffdeed;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -1;
+}
+
+.one-cocktail .ingredients span.ing-num{
+    font-size:12px;
+    margin-right: 15px;
 }

@@ -30,18 +30,28 @@
     </svg>
   </div>
   <h3>
-    <span class="num"> {{ cocktail.id }}</span> {{ cocktail.name }}
+    <span class="num"> {{ cocktail.id }}</span>
+    <span class="name">{{ cocktail.name }}</span>
   </h3>
-  <p><span class="label">Instructions:</span> {{ cocktail.instructions }}</p>
-  <p><span class="label">Category:</span> {{ cocktail.category }}</p>
-  <p><span class="label">Type of glass:</span> {{ cocktail.glass }}</p>
-  <p><span class="label">Alcoholic:</span> {{ cocktail.alcoholic }}</p>
-  <img [src]="sanitizer.bypassSecurityTrustUrl(cocktail.imageURL)" />
+  <div class="one-cocktail-content">
+    <div class="left">
+      <img [src]="sanitizer.bypassSecurityTrustUrl(cocktail.imageURL)" />
+    </div>
+    <div class="right">
+      <p>
+        <span class="label">Instructions:</span> {{ cocktail.instructions }}
+      </p>
+      <p><span class="label">Category:</span> {{ cocktail.category }}</p>
+      <p><span class="label">Type of glass:</span> {{ cocktail.glass }}</p>
+      <p><span class="label">Alcoholic:</span> {{ cocktail.alcoholic }}</p>
 
-  <h4>Ingredients:</h4>
-  <ul class="ingredients">
-    <li *ngFor="let ingredient of cocktail.ingredients">
-      {{ ingredient.id }} - {{ ingredient.name }}
-    </li>
-  </ul>
+      <h4>Ingredients:</h4>
+      <ul class="ingredients">
+        <li *ngFor="let ingredient of cocktail.ingredients">
+          <span class="ing-num">({{ ingredient.id }}) </span>
+          {{ ingredient.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

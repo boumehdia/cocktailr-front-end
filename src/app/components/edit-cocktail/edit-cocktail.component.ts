@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CocktailService } from 'src/app/cocktail.service';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Cocktail, Ingredient } from 'src/models/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-cocktail',
@@ -17,7 +18,8 @@ export class EditCocktailComponent implements OnInit  {
   constructor(
     private route: ActivatedRoute,
     private cocktailService: CocktailService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
   ) {
     this.cocktailForm = this.fb.group({
       id: [],
@@ -94,7 +96,8 @@ export class EditCocktailComponent implements OnInit  {
 
     if (cocktail.id) {
       console.log('cocktail',cocktail);
-      this.cocktailService.updateCocktail(cocktail).subscribe();
+      this.cocktailService.updateCocktail(cocktail).subscribe();      
+      this.router.navigateByUrl('/');
     } 
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { CocktailService } from 'src/app/cocktail.service';
 import { Ingredient, Cocktail } from 'src/models/models';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'add-cocktail',
@@ -12,7 +12,7 @@ import { Ingredient, Cocktail } from 'src/models/models';
 export class AddCocktailComponent implements OnInit {
   cocktailForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private cocktailService: CocktailService) {
+  constructor(private fb: FormBuilder, private router: Router, private cocktailService: CocktailService) {
     this.cocktailForm = this.fb.group({
       name: ['', Validators.required],
       instructions: ['', Validators.required],
@@ -85,6 +85,7 @@ export class AddCocktailComponent implements OnInit {
             });
           });
         }
+        this.router.navigateByUrl('/');
       },(errorResponse) => {
         const errorMessage = errorResponse.error.message;
         console.log(errorMessage);
