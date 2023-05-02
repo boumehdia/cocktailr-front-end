@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TileCocktailComponent } from './components/tile-cocktail/tile-cocktail.component';
 import { EditCocktailComponent } from './components/edit-cocktail/edit-cocktail.component';
 import { CocktailsComponent } from './components/cocktails/cocktails.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CocktailsComponent } from './components/cocktails/cocktails.component';
     AddCocktailComponent,
     TileCocktailComponent,
     EditCocktailComponent,
-    CocktailsComponent
+    CocktailsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

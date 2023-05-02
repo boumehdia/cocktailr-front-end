@@ -6,7 +6,7 @@
     [(ngModel)]="searchValue"
     (keyup.enter)="filterCocktails()"
   />
-  <button *ngIf="isSearched" (click)="reset()">Reset</button>
+  <button *ngIf="isSearched" class="reset" (click)="reset()">Reset</button>
 </div>
 
 <div class="cocktails">

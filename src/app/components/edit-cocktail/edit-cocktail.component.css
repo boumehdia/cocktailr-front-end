@@ -1,0 +1,79 @@
+h2 span.cocktail-name {
+    color: blue;
+    font-style: italic;
+}
+form.edit-cocktail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    width:30%;
+    padding: 30px;
+    border-radius: 30px;
+}
+form.edit-cocktail .one-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+form.edit-cocktail .one-input label{
+    margin-bottom:5px;
+}
+form.edit-cocktail .ingredient {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+form.edit-cocktail textarea, form.edit-cocktail input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+form.edit-cocktail .ingredients{
+    width:100%;
+}
+form.edit-cocktail .ingredient .remove {
+    height: 30px;
+    background-color: #d13838;
+    color: #fff;
+    border: 1px solid #c11f1f;
+}
+form.edit-cocktail .ingredient .remove:hover{
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+form.edit-cocktail .ingredients .add {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    color: #fff;
+    height: 30px;
+    margin-bottom:30px;
+}
+form.edit-cocktail .ingredients .add:hover{
+    background-color: #0069d9;
+    border-color:#0062cc;
+}
+form.edit-cocktail .ingredient .ing {
+    width: 100%;
+}
+form.edit-cocktail button[type="submit"] {
+    width: 100px;
+    height: 30px;
+    margin-left: auto;
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+form.edit-cocktail button[type="submit"]:hover{
+    background-color: #218838;
+    border-color:#1e7e34;
+}
+
+form.edit-cocktail button{
+    cursor: pointer;
+}

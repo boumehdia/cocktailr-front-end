@@ -8,6 +8,7 @@
 tile-cocktail {
     width: 30%;
     background-color: mistyrose;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     height: auto;
     margin: 15px;
     padding: 15px;

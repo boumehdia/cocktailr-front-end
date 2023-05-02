@@ -19,7 +19,9 @@
   </div>
   <div class="one-input">
     <label>Alcoholic:</label>
-    <input type="checkbox" formControlName="alcoholic" />
+    <div>
+      <input type="checkbox" formControlName="alcoholic" /><span>True</span>
+    </div>
   </div>
   <div class="one-input">
     <label>Image URL:</label>
@@ -37,14 +39,20 @@
         <input type="hidden" formControlName="id" />
         <div class="one-input">
           <label>Ingredient Name:</label>
-          <input type="text" formControlName="name" />
+          <div class="ing">
+            <input type="text" formControlName="name" />
+            <button
+              class="remove"
+              type="button"
+              (click)="removeIngredientFormGroup(i)"
+            >
+              Remove
+            </button>
+          </div>
         </div>
-        <button type="button" (click)="removeIngredientFormGroup(i)">
-          Remove
-        </button>
       </div>
     </div>
-    <button type="button" (click)="addIngredientFormGroup()">
+    <button class="add" type="button" (click)="addIngredientFormGroup()">
       Add Ingredient
     </button>
   </div>

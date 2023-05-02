@@ -1,5 +1,65 @@
-<div>
-  nr. {{ cocktail.id }}
-  <br />
-  {{ cocktail.name }}
-</div>
+<h2>
+  Edit the cocktail <span class="cocktail-name">{{ cocktail.name }}</span>
+</h2>
+<form class="edit-cocktail" [formGroup]="cocktailForm" (ngSubmit)="onSubmit()">
+  <input type="hidden" formControlName="id" />
+
+  <div class="one-input">
+    <label>Name:</label>
+    <input type="text" formControlName="name" />
+  </div>
+
+  <div class="one-input">
+    <label>Instructions:</label>
+    <textarea formControlName="instructions"></textarea>
+  </div>
+
+  <div class="one-input">
+    <label>Category:</label>
+    <input type="text" formControlName="category" />
+  </div>
+
+  <div class="one-input">
+    <label>Glass:</label>
+    <input type="text" formControlName="glass" />
+  </div>
+
+  <div class="one-input">
+    <label>Alcoholic:</label>
+    <input type="checkbox" formControlName="alcoholic" />
+  </div>
+
+  <div class="one-input">
+    <label>Image URL:</label>
+    <input type="text" formControlName="imageURL" />
+  </div>
+
+  <div class="ingredients" formArrayName="ingredients">
+    <div
+      *ngFor="
+        let ingredient of cocktailForm.get('ingredients')?.value;
+        let i = index
+      "
+    >
+      <div class="ingredient" [formGroupName]="i">
+        <input type="hidden" formControlName="id" />
+
+        <div class="one-input">
+          <label>Ingredient Name:</label>
+          <div class="ing">
+            <input type="text" formControlName="name" />
+            <button type="button" class="remove" (click)="removeIngredient(i)">
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="add" type="button" (click)="addIngredient()">
+      Add Ingredient
+    </button>
+  </div>
+
+  <button type="submit">Save Changes</button>
+</form>
