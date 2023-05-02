@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Cocktail, Ingredient} from 'src/models/models';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,13 @@ export class CocktailService {
     console.log(this.API_URL + this.ENDPOINT_COCKTAIL);
     return this.http.get<Cocktail[]>(this.API_URL + this.ENDPOINT_COCKTAIL);
   }
+  getCocktail(id: number): Observable<Cocktail> {
+    const url = `${this.API_URL}${this.ENDPOINT_COCKTAIL}/${id}`;
+    return this.http.get<Cocktail[]>(url).pipe(
+      map(cocktails => cocktails[0])
+    );
+  }
+
   postCocktail(cocktail: Cocktail): Observable<Cocktail> {
     return this.http.post<Cocktail>(this.API_URL + this.ENDPOINT_COCKTAIL, cocktail);
   }
